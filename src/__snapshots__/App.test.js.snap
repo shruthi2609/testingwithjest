@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no props 1`] = `
+<div>
+  No items in list
+</div>
+`;
+
+exports[`render multiple props 1`] = `
+<ul>
+  <li>
+    React
+  </li>
+  <li>
+    js
+  </li>
+  <li>
+    express
+  </li>
+</ul>
+`;
+
+exports[`render one prop 1`] = `
+<div>
+  React
+</div>
+`;

@@ -1,4 +1,5 @@
-import { render,screen } from "@testing-library/react"
+// Counter App Test file
+/*import { render,screen } from "@testing-library/react"
 import UserEvent from "@testing-library/user-event"
 import App from "./App"
 test("increment action",()=>{
@@ -31,3 +32,28 @@ test("combine incr and decr",()=>{
     expect(counter.textContent).toBe("-1")
 
 })
+//regular expressions
+import { render,screen } from "@testing-library/react"
+import App from "./App"
+test("check app is rendering a text value",()=>{
+    render(<App></App>)
+    expect(screen.getByText(/React/)).toBeInTheDocument()
+})*/
+//snapshot testing
+import  TestRenderer  from "react-test-renderer";
+import Items from "./Items";
+it("no props",()=>{
+    const tree=TestRenderer .create(<Items></Items>)
+    expect(tree).toMatchSnapshot();
+})
+it("render one prop",()=>{
+    const tech=["React"]
+    const tree= TestRenderer .create(<Items items={tech}></Items>)
+    expect(tree).toMatchSnapshot()
+})
+it("render multiple props",()=>{
+    const tech=["React","js","express"]
+    const tree= TestRenderer .create(<Items items={tech}></Items>)
+    expect(tree).toMatchSnapshot()
+})
+

@@ -1,13 +1,18 @@
+import React, { Component } from 'react';
+import Items from './Items';
 
-
-import CounterApp from './Counter';
-
-function App() {
-  return (
-   <div>
-     <CounterApp></CounterApp>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const items = [
+      "React",
+      "js",
+      "express"
+      
+    ];
+    return (
+      <Items items={items} />
+    );
+  }
 }
-
 export default App;
+
